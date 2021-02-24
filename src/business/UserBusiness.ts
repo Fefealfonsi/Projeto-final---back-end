@@ -1,5 +1,5 @@
 import { UserInputDTO, LoginInputDTO } from "./entities/User";
-import { UserDatabase } from "../data.ts/UserDatabase";
+import { UserDatabase } from "../data/UserDatabase";
 import { IdGenerator } from "./services/IdGenerator";
 import { HashManager } from "./services/HashManager";
 import { Authenticator } from "./services/Authenticator";
