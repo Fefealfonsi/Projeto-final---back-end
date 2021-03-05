@@ -66,7 +66,7 @@ export class UserBusiness {
 
       const userFromDB = await this.userDatabase.getUserByEmail(user.email)
 
-      console.log ("UserFormDB",userFromDB)
+      
 
      
       const passwordIsCorrect = await this.hashManager.compare(

@@ -3,9 +3,9 @@ export class Image {
        public readonly id: string,
        public readonly subtitle: string,
        public readonly author: string,
-       public readonly date: Date,
+       public readonly date: string,
        public readonly file: string,
-       public readonly tags: string[],
+       public readonly tags: Tag[] | undefined,
        public readonly collection: string
        
     ) { }
@@ -30,8 +30,7 @@ export class Image {
  
  export interface ImageInputDTO {
      subtitle: string,
-     author: string,
-     date: Date,
+     date: string,
      file: string,
      tags: string[],
      collection: string
@@ -41,13 +40,16 @@ export class Image {
      id: string,
      subtitle: string,
      author: string,
-     date: Date,
+     date: string,
      file: string,
-     tags: string[],
+     tags: Tag[],
      collection: string
-   
  }
-  
+
+ export interface Tag {
+   id: string,
+   tag: string,
+}
  export interface AuthenticationData {
     id: string;
  }

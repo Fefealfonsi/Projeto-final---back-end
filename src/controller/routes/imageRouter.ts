@@ -6,3 +6,5 @@ export const imageRouter = express.Router();
 const imageController = new ImageController();
 
 imageRouter.post("/create", imageController.create);
+imageRouter.get("/getImage", imageController.getAllImages);
+imageRouter.get("/getImage/:id", imageController.getImageById);
