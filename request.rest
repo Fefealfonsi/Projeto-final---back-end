@@ -3,9 +3,9 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "name": "Douglas Roberto",
+    "name": "Douglas Roberto o Gato",
     "email": "douglasroberto@gmail.com",
-    "nickname": "DouglasR",
+    "nickname": "Douglas Roberto",
 	"password": "123456"
     
 }
@@ -18,3 +18,21 @@ Content-Type: application/json
     "email": "douglasroberto@gmail.com",
 	"password": "123456"
 }
+
+### Create Image
+POST http://localhost:3003/image/create
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxZTBiMWU0LWRkNDktNGIxNy04Zjc3LTBkOWM3YWJjNjU3OSIsImlhdCI6MTYxNDg3Njk1NSwiZXhwIjoxNjE0ODc3MjU1fQ.sYH9urmbReZ3VW6d3L42KFhMm5ao0pTS1TC3k66TjUI
+
+{
+    "subtitle": "Ahhh o Carnaval",
+    "date": "04/03/2021",
+     "file": "https://www.instagram.com/p/CLhqPdeJO5_/",
+     "tags": ["#carnaval", "#reiMomo", "#semDignidade"],
+     "collection": "Gatos"
+     }
+
+### get All Images / get Images by Id
+GET  http://localhost:3003/image/getImage
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxZTBiMWU0LWRkNDktNGIxNy04Zjc3LTBkOWM3YWJjNjU3OSIsImlhdCI6MTYxNDg3Njk1NSwiZXhwIjoxNjE0ODc3MjU1fQ.sYH9urmbReZ3VW6d3L42KFhMm5ao0pTS1TC3k66TjUI

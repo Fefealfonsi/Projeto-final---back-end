@@ -1,5 +1,5 @@
 import { UserInputDTO, LoginInputDTO } from "./entities/User";
-import { UserDatabase } from "../data.ts/UserDatabase";
+import { UserDatabase } from "../data/UserDatabase";
 import { IdGenerator } from "./services/IdGenerator";
 import { HashManager } from "./services/HashManager";
 import { Authenticator } from "./services/Authenticator";
@@ -66,7 +66,7 @@ export class UserBusiness {
 
       const userFromDB = await this.userDatabase.getUserByEmail(user.email)
 
-      console.log ("UserFormDB",userFromDB)
+      
 
      
       const passwordIsCorrect = await this.hashManager.compare(

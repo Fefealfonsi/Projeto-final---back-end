@@ -4,7 +4,7 @@ import { Authenticator } from "../business/services/Authenticator";
 import { HashManager } from "../business/services/HashManager";
 import { IdGenerator } from "../business/services/IdGenerator";
 import { UserBusiness } from "../business/UserBusiness";
-import { UserDatabase } from "../data.ts/UserDatabase";
+import { UserDatabase } from "../data/UserDatabase";
 
 const userBusiness = new UserBusiness(
    new IdGenerator(),
