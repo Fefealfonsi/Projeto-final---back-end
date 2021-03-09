@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### login
-POST http://localhost:3003/user/login
+POST   https://pinterpets.herokuapp.com/user/login
 Content-Type: application/json
 
 {
@@ -22,17 +22,17 @@ Content-Type: application/json
 ### Create Image
 POST http://localhost:3003/image/create
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxZTBiMWU0LWRkNDktNGIxNy04Zjc3LTBkOWM3YWJjNjU3OSIsImlhdCI6MTYxNDg3Njk1NSwiZXhwIjoxNjE0ODc3MjU1fQ.sYH9urmbReZ3VW6d3L42KFhMm5ao0pTS1TC3k66TjUI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxZTBiMWU0LWRkNDktNGIxNy04Zjc3LTBkOWM3YWJjNjU3OSIsImlhdCI6MTYxNTI0NTU2NSwiZXhwIjoxNjE1MjQ1ODY1fQ.JbuufXMb6wH9E4Emymlj3BfZ8DUDfpU0waim-l-8PXA
 
 {
-    "subtitle": "Ahhh o Carnaval",
-    "date": "04/03/2021",
-     "file": "https://www.instagram.com/p/CLhqPdeJO5_/",
-     "tags": ["#carnaval", "#reiMomo", "#semDignidade"],
+    "subtitle": "Business Baby",
+    "date": "08/03/2021",
+     "file": "https://www.instagram.com/p/BpKFAHKAMCS/?utm_source=ig_embed",
+     "tags": ["#dinheiroNaCueca", "#voteEmMim"],
      "collection": "Gatos"
      }
 
 ### get All Images / get Images by Id
 GET  http://localhost:3003/image/getImage
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxZTBiMWU0LWRkNDktNGIxNy04Zjc3LTBkOWM3YWJjNjU3OSIsImlhdCI6MTYxNDg3Njk1NSwiZXhwIjoxNjE0ODc3MjU1fQ.sYH9urmbReZ3VW6d3L42KFhMm5ao0pTS1TC3k66TjUI
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxZTBiMWU0LWRkNDktNGIxNy04Zjc3LTBkOWM3YWJjNjU3OSIsImlhdCI6MTYxNTIzODk3NiwiZXhwIjoxNjE1MjM5Mjc2fQ.W5CuJQcnowcRaUxVk_W-B7Vs3tV7nR1Yux4Y5FytQ_4
