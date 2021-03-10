@@ -3,9 +3,9 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "name": "Douglas Roberto o Gato",
-    "email": "douglasroberto@gmail.com",
-    "nickname": "Douglas Roberto",
+    "name": "wolf gang",
+    "email": "wolfgang@gmail.com",
+    "nickname": "wolf",
 	"password": "123456"
     
 }
@@ -15,24 +15,24 @@ POST   https://pinterpets.herokuapp.com/user/login
 Content-Type: application/json
 
 {
-    "email": "douglasroberto@gmail.com",
+    "email": "estoupinha@gmail.com",
 	"password": "123456"
 }
 
 ### Create Image
-POST http://localhost:3003/image/create
+POST https://pinterpets.herokuapp.com/image/create
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxZTBiMWU0LWRkNDktNGIxNy04Zjc3LTBkOWM3YWJjNjU3OSIsImlhdCI6MTYxNTI0NTU2NSwiZXhwIjoxNjE1MjQ1ODY1fQ.JbuufXMb6wH9E4Emymlj3BfZ8DUDfpU0waim-l-8PXA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTExOWM5LWFjNTQtNDY1My05MzhkLTQzMjI4NmE3YmE5YSIsImlhdCI6MTYxNTM5NjI2OCwiZXhwIjoxNjE1NDgyNjY4fQ.98w0i5HoAwExY4DdrxIx1o5bqEsR6OTDwwosgWqiS3w
 
 {
-    "subtitle": "Business Baby",
-    "date": "08/03/2021",
-     "file": "https://www.instagram.com/p/BpKFAHKAMCS/?utm_source=ig_embed",
-     "tags": ["#dinheiroNaCueca", "#voteEmMim"],
-     "collection": "Gatos"
+    "subtitle": "wolf e sua turma",
+    "date": "10/03/2021",
+     "file": "https://images-na.ssl-images-amazon.com/images/I/91dU-dNxkhL.jpg",
+     "tags": ["#amigoEstouAqui"],
+     "collection": "Catiorro"
      }
 
 ### get All Images / get Images by Id
 GET  http://localhost:3003/image/getImage
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxZTBiMWU0LWRkNDktNGIxNy04Zjc3LTBkOWM3YWJjNjU3OSIsImlhdCI6MTYxNTIzODk3NiwiZXhwIjoxNjE1MjM5Mjc2fQ.W5CuJQcnowcRaUxVk_W-B7Vs3tV7nR1Yux4Y5FytQ_4
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE4Y2I2MjRmLTVmNjctNDQxNy05NTdhLTljNzM0NzYwMGZkNCIsImlhdCI6MTYxNTM5OTU0MywiZXhwIjoxNjE1NDg1OTQzfQ.aVkKAXKYyEvqVZBDGop7BKi6fKv_5quAxOkOCsjXLTg

@@ -48,6 +48,8 @@ export class ImageDatabase extends BaseDatabase {
                `)
 
             if (tagSelect[0].length === 0) {
+
+
                await BaseDatabase.connection.raw(`
                      INSERT INTO TAGS_PINTERPETS (tag)
                      VALUES( "${tags[i]}")
@@ -82,33 +84,44 @@ export class ImageDatabase extends BaseDatabase {
       }
    }
 
-   public async getAllImages(): Promise<any> {
+   public async getAllImages(id:string): Promise<any> {
       try {
+
+         console.log(id)
 
 
          const resultImage = await BaseDatabase.connection.raw(`
-         SELECT * FROM ${ImageDatabase.TABLE_NAME}
+         SELECT ip.*, up.name FROM ${ImageDatabase.TABLE_NAME} as ip
+         JOIN USER_PINTERPETS as up
+         ON up.id = ip.author 
+         WHERE author = '${id}'
          `)
 
                      
-         const images: Image[] = []
+         const images: any = []
 
          for (let image of resultImage[0]) {
            
            
-            const imageTag = await BaseDatabase.connection.raw(`
-             SELECT ip.author, ip.id as imageId, ip.subtitle, ip.date, ip.file,tp.tag, ip.collection
-             FROM IMAGE_PINTERPETS AS ip
-             JOIN TAGS_PINTERPETS AS tp
-             JOIN IMAGE_TAGS_PINTERPETS AS itp
-             ON itp.tag_id = tp.id
-             ON itp.image_id = ip.id
-             WHERE ip.id = '${image.id}';
+            const imageTags = await BaseDatabase.connection.raw(`
+            SELECT tp.tag 
+            FROM IMAGE_PINTERPETS AS ip
+            JOIN TAGS_PINTERPETS AS tp
+            JOIN IMAGE_TAGS_PINTERPETS AS itp
+            ON itp.tag_id = tp.id
+            ON itp.image_id = ip.id
+            WHERE ip.id = '${image.id}';
+             
             `)
 
+            
+            
            
             const tags: Tag[] = []
-            for (let tag of imageTag[0]) {
+
+            for (let tag of imageTags[0]) {
+
+              
 
                tags.push(tag.tag)
              
@@ -118,6 +131,7 @@ export class ImageDatabase extends BaseDatabase {
 
             images.push({
                id: image.id,
+               name: image.name,
                subtitle: image.subtitle,
                author: image.author,
                date: image.date,
@@ -153,7 +167,7 @@ export class ImageDatabase extends BaseDatabase {
          WHERE ip.id = '${id}';
          `)
 
-         // console.log("RESULT1", result[0])
+         
 
          return (result[0]);
 

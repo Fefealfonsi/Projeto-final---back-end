@@ -51,7 +51,7 @@ export class ImageBusiness {
 
          const verifiedToken= this.authenticator.getData(token)
 
-         const imageFromDB = await this.imageDatabase.getAllImages();
+         const imageFromDB = await this.imageDatabase.getAllImages(verifiedToken.id);
 
        if (!token) {
             throw new Error("jwt expired");
@@ -70,8 +70,7 @@ export class ImageBusiness {
       
       return imageFromDB;
       }catch(error){
-         (error.statusCode || 400)
-         {error.message };
+         throw new CustomError (error.statusCode || 400, error.message );
       }
 
      
@@ -97,7 +96,7 @@ export class ImageBusiness {
             if(imageResult[j] && imageFromDB[i].id ===  imageResult[j].id){
             imageResult[j].tags.push( imageFromDB[i].tag)
             sameName = true;
-            console.log("imageResult[j]",imageResult[j])
+            
             break;
             }
          }
