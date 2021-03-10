@@ -167,7 +167,7 @@ export class ImageDatabase extends BaseDatabase {
          WHERE ip.id = '${id}';
          `)
 
-         
+         console.log(result[0])
 
          return (result[0]);
 
