@@ -15,14 +15,14 @@ POST   https://pinterpets.herokuapp.com/user/login
 Content-Type: application/json
 
 {
-    "email": "estoupinha@gmail.com",
+    "email": "douglasroberto@gmail.com",
 	"password": "123456"
 }
 
 ### Create Image
 POST https://pinterpets.herokuapp.com/image/create
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTExOWM5LWFjNTQtNDY1My05MzhkLTQzMjI4NmE3YmE5YSIsImlhdCI6MTYxNTM5NjI2OCwiZXhwIjoxNjE1NDgyNjY4fQ.98w0i5HoAwExY4DdrxIx1o5bqEsR6OTDwwosgWqiS3w
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE4Y2I2MjRmLTVmNjctNDQxNy05NTdhLTljNzM0NzYwMGZkNCIsImlhdCI6MTYxNjcwNzI4MywiZXhwIjoxNjE2NzkzNjgzfQ.PcdJoKOFYbAcBaM4eCWuNMqo3Hm6D37guwb5t43RQxo
 
 {
     "subtitle": "wolf e sua turma",
@@ -33,6 +33,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZTExOWM5LWFjNTQt
      }
 
 ### get All Images / get Images by Id
-GET  http://localhost:3003/image/getImage
+GET  http://localhost:3003/image/getImage/
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE4Y2I2MjRmLTVmNjctNDQxNy05NTdhLTljNzM0NzYwMGZkNCIsImlhdCI6MTYxNTM5OTU0MywiZXhwIjoxNjE1NDg1OTQzfQ.aVkKAXKYyEvqVZBDGop7BKi6fKv_5quAxOkOCsjXLTg
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxZTBiMWU0LWRkNDktNGIxNy04Zjc3LTBkOWM3YWJjNjU3OSIsImlhdCI6MTYxNjcwNzY4NiwiZXhwIjoxNjE2Nzk0MDg2fQ.2fTlqg7TaHho0SkKTUxchnd28rKA0FS50_Vd02Y8FTQ
+
+### delete image
+DELETE http://pinterpets.herokuapp.com/image/delete/a6a997d9-0910-4f12-ac8b-2fc92363d625
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxZTBiMWU0LWRkNDktNGIxNy04Zjc3LTBkOWM3YWJjNjU3OSIsImlhdCI6MTYxNjcwNzc0OSwiZXhwIjoxNjE2Nzk0MTQ5fQ.lskYp6Vv-blQ-ygnXo5Yhws5FdwSYlZGu9RycDGBmHM

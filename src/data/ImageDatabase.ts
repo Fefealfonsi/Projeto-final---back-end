@@ -55,7 +55,6 @@ export class ImageDatabase extends BaseDatabase {
                      VALUES( "${tags[i]}")
                      `)
 
-
             } else {
                console.log(`A TAG ${tags[i]} já existe`)
             }
@@ -68,14 +67,10 @@ export class ImageDatabase extends BaseDatabase {
             WHERE tag = "${tags[i]}";
             `)
 
-
             await BaseDatabase.connection.raw(`
             INSERT INTO IMAGE_TAGS_PINTERPETS (image_id, tag_id)
             VALUES("${id}", "${tagId[0][0].id}")
             `)
-
-
-
          }
 
       } catch (error) {
@@ -114,21 +109,13 @@ export class ImageDatabase extends BaseDatabase {
              
             `)
 
-            
-            
-           
             const tags: Tag[] = []
 
             for (let tag of imageTags[0]) {
 
-              
-
                tags.push(tag.tag)
              
             }
-
-            
-
             images.push({
                id: image.id,
                name: image.name,
@@ -140,7 +127,6 @@ export class ImageDatabase extends BaseDatabase {
                collection: image.collection,
 
             })
-                       
             
          }
          return images
@@ -171,6 +157,28 @@ export class ImageDatabase extends BaseDatabase {
 
          return (result[0]);
 
+      } catch (error) {
+         console.log(error)
+         throw new CustomError(500, "An unexpected error ocurred");
+      }
+   }
+
+   public async deleteImage(id: string): Promise<any> {
+      try {
+
+
+         await BaseDatabase.connection.raw(`
+         DELETE FROM IMAGE_TAGS_PINTERPETS 
+         WHERE image_id = '${id}';
+         `)
+
+         await BaseDatabase.connection.raw(`
+         DELETE FROM IMAGE_PINTERPETS 
+         WHERE id = '${id}';
+         `)
+
+         return `the image for id ${id} has been deleted`
+         
       } catch (error) {
          console.log(error)
          throw new CustomError(500, "An unexpected error ocurred");

@@ -78,4 +78,22 @@ export class ImageController {
       }
    }
 
+   async deleteImage(req: Request, res: Response) {
+
+      try {
+
+         const id = req.params.id as any
+         const token = req.headers.authorization as any
+         
+         const result = await imageBusiness.deleteImage(id, token);
+         
+         res.status(200).send({result});
+
+      } catch (error) {
+         res
+            .status(error.statusCode || 400)
+            .send({ error: error.message });
+      }
+   }
+
 }
